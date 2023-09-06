@@ -26,7 +26,7 @@ public class SolarTrackingUpdate {
         System.out.println("Prod Data Size: " + prodData.size());
         List<Map<String, Object>> prodNotAvailableDataFilterd = DBUtils.filterNotAvailableData(prodData, devData);
         List<Map<String, Object>> opcoFilter = DBUtils.filterDataByOpcoList(prodNotAvailableDataFilterd, args[0]);
-       // DBUtils.insertDataToPostgresql(opcoFilter, devhelper);
+        DBUtils.insertDataToPostgresql(opcoFilter, devhelper);
         prodHelper.closeConnection();
     }
 }
