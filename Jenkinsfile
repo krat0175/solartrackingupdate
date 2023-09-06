@@ -6,7 +6,7 @@ pipeline {
         }
     }
     parameters {
-            string(name: 'opcos', defaultValue: 'all', description: 'opco list')
+            string(name: 'opcos', defaultValue: '014,015,019,027,075,163,429,060,134,335,344', description: 'opco list')
         }
     stages {
         stage('Checkout'){
