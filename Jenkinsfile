@@ -1,4 +1,3 @@
-currentBuild.displayName = "#${Build_Name}-${Test_Plan}"
 pipeline {
     agent
     {
