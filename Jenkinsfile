@@ -22,8 +22,7 @@ pipeline {
 
                 configFileProvider([configFile(fileId: 'QESettings.xml', variable: 'MAVEN_SETTINGS')]) {
                     withCredentials([usernamePassword(credentialsId: 'ssodetails', usernameVariable: 'ssousername', passwordVariable: 'ssopassword')]) {
-                       sh 'export DISPLAY=:0'
-                       sh 'chmod +x mvnw'
+                       sh 'chmod +x ./mvnw'
                        sh "./mvnw -s $MAVEN_SETTINGS -T 8 clean install"
                        //exeucte main class
                           sh "./mvnw -s $MAVEN_SETTINGS -T 8 exec:java -Dexec.mainClass=\"com.solartracking.SolarTrackingUpdate\" -Dexec.args=\"-opcos ${params.opcos}"

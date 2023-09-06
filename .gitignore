@@ -1,7 +1,8 @@
 # Compiled class file
 *.class
 /target/
-/.idea
+/.idea/
+SolarTrackingTableUpdate.iml
 # Log file
 *.log
 
