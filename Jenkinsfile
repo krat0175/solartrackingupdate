@@ -25,7 +25,7 @@ pipeline {
                        sh 'chmod +x ./mvnw'
                        sh "./mvnw -s $MAVEN_SETTINGS -T 8 clean install"
                        //exeucte main class
-                          sh "./mvnw -s $MAVEN_SETTINGS -T 8 exec:java -Dexec.mainClass=\"com.solartracking.SolarTrackingUpdate\" -Dexec.args=\"-opcos ${params.opcos}""
+                          sh "./mvnw -s $MAVEN_SETTINGS -T 8 exec:java -Dexec.mainClass=com.solartracking.SolarTrackingUpdate -Dexec.args=${params.opcos}"
                     }
                 }
             }
